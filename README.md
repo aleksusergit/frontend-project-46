@@ -4,6 +4,8 @@
 
 [![Actions Status](https://github.com/aleksusergit/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/aleksusergit/frontend-project-46/actions)
 
+[![Node CI](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml/badge.svg)](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/2fd0ee9edf6c6de49b8e/maintainability)](https://codeclimate.com/github/aleksusergit/frontend-project-46/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2fd0ee9edf6c6de49b8e/test_coverage)](https://codeclimate.com/github/aleksusergit/frontend-project-46/test_coverage)
