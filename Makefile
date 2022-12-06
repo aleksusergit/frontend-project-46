@@ -12,5 +12,13 @@ link:
 publish: # publish the project locally
 	npm publish --dry-run
 
-#lint: # linter check
-#	npx eslint .
+lint: # linter check
+	npx eslint .
+
+test:
+	npm test
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
+
+.PHONY: test

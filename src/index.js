@@ -10,8 +10,7 @@ const normalizeData = (filepath) => {
 };
 
 const getIndent = (depth, replacer = ' ', spacesCount = 2) => replacer.repeat(depth * spacesCount);
-const getBracketIndent = (depth, replacer = ' ', spacesCount = 2) =>
-  replacer.repeat(depth * spacesCount - spacesCount);
+const getBracketIndent = (depth, replacer = ' ', spacesCount = 2) => replacer.repeat(depth * spacesCount - spacesCount);
 
 const getValue = (currentValue, depth = 1) => {
   const currentIndent = getIndent(depth);
@@ -49,17 +48,6 @@ const stylish = (data, depth = 1) => {
   return ['{', ...lines, `${bracketIndent}}`].join('\n');
 };
 
-const genDiff = (filepath1, filepath2) => {
-  const getData1 = normalizeData(filepath1);
-  const getData2 = normalizeData(filepath2);
-  const keys1 = Object.keys(getData1);
-  const keys2 = Object.keys(getData2);
-  const unitedKeys = _.union(keys1, keys2);
-  const sortedKeys = _.sortBy(unitedKeys);
-
-  return getDifferences(getData1, getData2, sortedKeys);
-};
-
 const getDifferences = (getData1, getData2, sortedKeys) => {
   const result = sortedKeys.map((key) => {
     if (!_.has(getData1, key)) {
@@ -80,6 +68,17 @@ const getDifferences = (getData1, getData2, sortedKeys) => {
   });
 
   return stylish(result);
+};
+
+const genDiff = (filepath1, filepath2) => {
+  const getData1 = normalizeData(filepath1);
+  const getData2 = normalizeData(filepath2);
+  const keys1 = Object.keys(getData1);
+  const keys2 = Object.keys(getData2);
+  const unitedKeys = _.union(keys1, keys2);
+  const sortedKeys = _.sortBy(unitedKeys);
+
+  return getDifferences(getData1, getData2, sortedKeys);
 };
 
 export default genDiff;
