@@ -3,7 +3,13 @@
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/aleksusergit/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/aleksusergit/frontend-project-46/actions)
+<<<<<<< HEAD
 [![Node CI](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml/badge.svg)](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml)
+=======
+
+[![Node CI](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml/badge.svg)](https://github.com/aleksusergit/frontend-project-46/actions/workflows/github-actions.yml)
+
+>>>>>>> 960d2cce1971b45d7c9159ba29d2de2cf49c3381
 [![Maintainability](https://api.codeclimate.com/v1/badges/2fd0ee9edf6c6de49b8e/maintainability)](https://codeclimate.com/github/aleksusergit/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2fd0ee9edf6c6de49b8e/test_coverage)](https://codeclimate.com/github/aleksusergit/frontend-project-46/test_coverage)
 
