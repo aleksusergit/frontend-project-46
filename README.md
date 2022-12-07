@@ -11,11 +11,12 @@
 
 Проект "Вычислитель отличий" – это программа (утилита), определяющая разницу между двумя структурами данных. Это популярная задача, для решения которой существует множество онлайн сервисов, например, http://www.jsondiff.com/. Подобный механизм зачастую используется при выводе тестов или при автоматическом отслеживании изменении в конфигурационных файлах.
 
-<!-- Возможности утилиты:
+Возможности утилиты:
 
 - Поддержка разных входных форматов: yml, yaml, json
+<!--
 - Генерация отчета в виде plain text, stylish и json
- -->
+  -->
 
 ## Требования
 
@@ -39,10 +40,18 @@ $ make setup
 
 ## Пример использования
 
-### Сравнение плоских файлов (JSON)
+### Сравнение плоских файлов (json)
 
 ```
-$ gendiff filePath1.json filePath2.json
+$ gendiff filepath1.json filepath2.json
 ```
 
 [![asciicast](https://asciinema.org/a/aO7WXJ44NJal35GaMaT70iWE1.svg)](https://asciinema.org/a/aO7WXJ44NJal35GaMaT70iWE1)
+
+### Сравнение плоских файлов (yml, yaml, json)
+
+```
+$ gendiff filepath1.yml filepath2.yml
+```
+
+[![ascicast](https://asciinema.org/a/pIaGc0TZHcFJpmR8KYC0bummQ.svg)](https://asciinema.org/a/pIaGc0TZHcFJpmR8KYC0bummQ)

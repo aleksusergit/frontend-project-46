@@ -1,12 +1,14 @@
 import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
+import path from 'path';
+import parse from './parsers.js';
 
-const normalizeData = (filepath) => {
+const getExtension = (filepath) => path.extname(filepath).slice(1);
+
+const getContentParse = (filepath) => {
   const normalizePath = path.resolve(process.cwd(), filepath);
   const getContent = fs.readFileSync(normalizePath, 'utf-8');
-  const getContentParse = JSON.parse(getContent);
-  return getContentParse;
+  return parse(getContent, getExtension(filepath));
 };
 
 const getIndent = (depth, replacer = ' ', spacesCount = 2) => replacer.repeat(depth * spacesCount);
@@ -48,8 +50,12 @@ const stylish = (data, depth = 1) => {
   return ['{', ...lines, `${bracketIndent}}`].join('\n');
 };
 
-const getDifferences = (getData1, getData2, sortedKeys) => {
-  const result = sortedKeys.map((key) => {
+const getDifferences = (getData1, getData2) => {
+  const keys1 = Object.keys(getData1);
+  const keys2 = Object.keys(getData2);
+  const unitedKeys = _.sortBy(_.union(keys1, keys2));
+
+  const result = unitedKeys.map((key) => {
     if (!_.has(getData1, key)) {
       return { type: 'added', key, value2: getData2[key] };
     }
@@ -71,14 +77,10 @@ const getDifferences = (getData1, getData2, sortedKeys) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
-  const getData1 = normalizeData(filepath1);
-  const getData2 = normalizeData(filepath2);
-  const keys1 = Object.keys(getData1);
-  const keys2 = Object.keys(getData2);
-  const unitedKeys = _.union(keys1, keys2);
-  const sortedKeys = _.sortBy(unitedKeys);
+  const getData1 = getContentParse(filepath1);
+  const getData2 = getContentParse(filepath2);
 
-  return getDifferences(getData1, getData2, sortedKeys);
+  return getDifferences(getData1, getData2);
 };
 
 export default genDiff;
