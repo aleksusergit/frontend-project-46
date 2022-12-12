@@ -11,9 +11,9 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 const json1 = getFixturePath('file1.json');
 const json2 = getFixturePath('file2.json');
-const yml1 = getFixturePath('file1.yml');
-const yml2 = getFixturePath('file2.yml');
-const expected = readFile('expectedFile.txt');
+const yaml1 = getFixturePath('file1.yaml');
+const yaml2 = getFixturePath('file2.yaml');
+const expected = readFile('expectedStylish.txt');
 
 describe('Checking flat files', () => {
   test('stylish, json-json', () => {
@@ -22,17 +22,17 @@ describe('Checking flat files', () => {
   });
 
   test('stylish, json-yml', () => {
-    const actual = genDiff(json1, yml2);
+    const actual = genDiff(json1, yaml2);
     expect(actual).toBe(expected);
   });
 
   test('stylish, yml-yml', () => {
-    const actual = genDiff(yml1, yml2);
+    const actual = genDiff(yaml1, yaml2);
     expect(actual).toBe(expected);
   });
 
   test('stylish, yml-json', () => {
-    const actual = genDiff(yml1, json2);
+    const actual = genDiff(yaml1, json2);
     expect(actual).toBe(expected);
   });
 });

@@ -40,7 +40,7 @@ $ make setup
 
 ## Пример использования
 
-### Сравнение плоских файлов (json)
+### Сравнение плоских файлов (.json)
 
 ```
 $ gendiff filepath1.json filepath2.json
@@ -48,10 +48,18 @@ $ gendiff filepath1.json filepath2.json
 
 [![asciicast](https://asciinema.org/a/aO7WXJ44NJal35GaMaT70iWE1.svg)](https://asciinema.org/a/aO7WXJ44NJal35GaMaT70iWE1)
 
-### Сравнение плоских файлов (yml, yaml, json)
+### Сравнение плоских файлов (.yml, .yaml, .json)
 
 ```
-$ gendiff filepath1.yml filepath2.yml
+$ gendiff filepath1.yaml filepath2.yaml
 ```
 
 [![ascicast](https://asciinema.org/a/pIaGc0TZHcFJpmR8KYC0bummQ.svg)](https://asciinema.org/a/pIaGc0TZHcFJpmR8KYC0bummQ)
+
+### Сравнение файлов с вложенной структурой (.yml, .yaml, .json)
+
+```
+$ gendiff filepath1.json filepath2.yaml
+```
+
+[![ascicast](https://asciinema.org/a/NhO0wSWwcuZDc5H8qMj0WTZC5.svg)](https://asciinema.org/a/NhO0wSWwcuZDc5H8qMj0WTZC5)
