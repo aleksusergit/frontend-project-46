@@ -15,10 +15,10 @@ publish: # publish the project locally
 lint: # linter check
 	npx eslint .
 
-fix:
+fix: # linter fix
 	npx eslint --fix .
 
-test:
+test: # start test
 	npm test
 
 test-coverage:

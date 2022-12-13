@@ -1,27 +1,27 @@
 import _ from 'lodash';
 
-const getDifferences = (getData1, getData2) => {
-  const unitedKeys = _.sortBy(_.union(Object.keys(getData1), Object.keys(getData2)));
+const getDifferences = (data1, data2) => {
+  const unitedKeys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
 
   const result = unitedKeys.map((key) => {
-    if (typeof getData1[key] === 'object' && typeof getData2[key] === 'object') {
-      return { key, children: getDifferences(getData1[key], getData2[key]), type: 'nested' };
+    if (typeof data1[key] === 'object' && typeof data2[key] === 'object') {
+      return { key, children: getDifferences(data1[key], data2[key]), type: 'nested' };
     }
-    if (!_.has(getData1, key)) {
-      return { key, value2: getData2[key], type: 'added' };
+    if (!_.has(data1, key)) {
+      return { key, value2: data2[key], type: 'added' };
     }
-    if (!_.has(getData2, key)) {
-      return { key, value1: getData1[key], type: 'deleted' };
+    if (!_.has(data2, key)) {
+      return { key, value1: data1[key], type: 'deleted' };
     }
-    if (getData1[key] !== getData2[key]) {
+    if (data1[key] !== data2[key]) {
       return {
         key,
-        value1: getData1[key],
-        value2: getData2[key],
+        value1: data1[key],
+        value2: data2[key],
         type: 'changed',
       };
     }
-    return { key, value1: getData1[key], type: 'unchanged' };
+    return { key, value1: data1[key], type: 'unchanged' };
   });
 
   return result;

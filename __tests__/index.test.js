@@ -27,6 +27,10 @@ const formatCases = [
     format: 'plain',
     expectedFile: 'expectedPlain.txt',
   },
+  {
+    format: 'json',
+    expectedFile: 'expectedJson.txt',
+  },
 ];
 
 describe.each(formatCases)('Testing function gendiff', ({ format, expectedFile }) => {

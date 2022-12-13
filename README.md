@@ -15,7 +15,7 @@
 
 - Поддержка разных входных форматов: yml, yaml, json
 
-- Генерация отчета в виде plain text и stylish <!-- и json  -->
+- Генерация отчета в виде stylish, plain text и json
 
 ## Требования
 
@@ -70,3 +70,11 @@ $ gendiff -f plain filepath1.json filepath2.yaml
 ```
 
 [![ascicast](https://asciinema.org/a/uJHuRagkm5qRXsyCjrSHIrnJL.svg)](https://asciinema.org/a/uJHuRagkm5qRXsyCjrSHIrnJL)
+
+### Сравнение файлов (.yml, .yaml, .json) с вложенной структурой в формате json
+
+```
+$ gendiff -f json filepath1.json filepath2.yaml
+```
+
+[![ascicast](https://asciinema.org/a/COLsz1hvAFoIE6WWxRoKyp6kn.svg)](https://asciinema.org/a/COLsz1hvAFoIE6WWxRoKyp6kn)

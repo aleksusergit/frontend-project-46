@@ -1,4 +1,3 @@
-// import _ from 'lodash';
 const inputValue = (value) => {
   if (typeof value === 'object' && value !== null) {
     return '[complex value]';
@@ -8,13 +7,6 @@ const inputValue = (value) => {
   }
   return `${value}`;
 };
-
-// const property = (propName) => {
-//     const iter = (prop, depth) => {
-
-//     }
-//     return iter(propName, 0);
-// };
 
 const plain = (data) => {
   const iter = (diff, keys) => {
