@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import parse from './parsers.js';
 import getDifferences from './buildDiff.js';
-import formatChoice from './formatters/formatChoice.js';
+import formatChoice from './formatters/index.js';
 
 const getContentParse = (filepath) => {
   const normalizePath = path.resolve(process.cwd(), filepath);

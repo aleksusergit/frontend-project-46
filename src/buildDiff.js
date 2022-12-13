@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
 const getDifferences = (getData1, getData2) => {
-  const keys1 = Object.keys(getData1);
-  const keys2 = Object.keys(getData2);
-  const unitedKeys = _.sortBy(_.union(keys1, keys2));
+  const unitedKeys = _.sortBy(_.union(Object.keys(getData1), Object.keys(getData2)));
 
   const result = unitedKeys.map((key) => {
     if (typeof getData1[key] === 'object' && typeof getData2[key] === 'object') {

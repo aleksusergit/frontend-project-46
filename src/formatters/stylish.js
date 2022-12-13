@@ -10,7 +10,6 @@ const getValue = (currentValue, depth) => {
 
   const currentIndent = getIndent(depth);
   const bracketIndent = getBracketIndent(depth);
-
   const lines = Object.entries(currentValue).map(
     ([key, value]) => `${currentIndent}${key}: ${getValue(value, depth + 1)}`,
   );
