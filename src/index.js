@@ -13,10 +13,10 @@ const getContentParse = (filepath) => {
 };
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
-  const getData1 = getContentParse(filepath1);
-  const getData2 = getContentParse(filepath2);
+  const data1 = getContentParse(filepath1);
+  const data2 = getContentParse(filepath2);
 
-  return formatChoice(getDifferences(getData1, getData2), formatName);
+  return formatChoice(getDifferences(data1, data2), formatName);
 };
 
 export default genDiff;

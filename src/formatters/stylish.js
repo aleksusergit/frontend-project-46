@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-const getIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat((depth + 1) * spacesCount);
-const getBracketIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount);
+const getIndent = (depth, spacesCount = 4) => ' '.repeat((depth + 1) * spacesCount);
+const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount);
 
 const getValue = (currentValue, depth) => {
   if (!_.isObject(currentValue)) {
@@ -10,9 +10,7 @@ const getValue = (currentValue, depth) => {
 
   const currentIndent = getIndent(depth);
   const bracketIndent = getBracketIndent(depth);
-  const lines = Object.entries(currentValue).map(
-    ([key, value]) => `${currentIndent}${key}: ${getValue(value, depth + 1)}`,
-  );
+  const lines = Object.entries(currentValue).map(([key, value]) => `${currentIndent}${key}: ${getValue(value, depth + 1)}`);
 
   return ['{', ...lines, `${bracketIndent}}`].join('\n');
 };
