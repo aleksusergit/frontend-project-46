@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-const getIndent = (depth, spacesCount = 4) => ' '.repeat((depth + 1) * spacesCount);
-const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount);
+const getIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat((depth + 1) * spacesCount);
+const getBracketIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount);
 
 const getValue = (currentValue, depth) => {
   if (!_.isObject(currentValue)) {
